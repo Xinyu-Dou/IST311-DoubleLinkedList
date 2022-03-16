@@ -11,5 +11,19 @@ public class DoubleLinkedList<T> {
 
     }
 
+    // Adding a node after the last node of the list
+    public Node<T> append(Album data) {
+        Node<T> node = new Node<T>(data);
+        if (this.head == null) {
+            this.head = node;
+        } else {
+            this.tail.next = node;
+            this.tail.next.prev = this.tail;
+        }
+        this.tail = node;
+        this.tail.next = null;
+        numNode += 1;
+        return node;
+    }
 
 }
