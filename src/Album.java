@@ -47,11 +47,8 @@ public class Album implements Comparable<Album>{
 
     @Override
     public int compareTo(Album o) {
-        if(this.numSongs > o.numSongs){
+        if(this.numSongs >= o.numSongs){
             return 1;
-        }
-        else if (this.numSongs == o.numSongs){
-            return 2;
         }
         else{
             return 0;

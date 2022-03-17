@@ -188,9 +188,6 @@ public class DoubleLinkedList<T> {
             if(pointer.data.compareTo(data.data) == 1){
                 newList.append(pointer.data);
             }
-            else{
-                continue;
-            }
             pointer = pointer.next;
         }
         return newList;

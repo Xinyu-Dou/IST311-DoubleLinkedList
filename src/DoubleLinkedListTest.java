@@ -92,5 +92,43 @@ class DoubleLinkedListTest {
         assertEquals(-1,dl.getIndex(a4));
     }
 
+    @Test
+    void shuffle() {
+        DoubleLinkedList dl = new DoubleLinkedList();
+        DoubleLinkedList dl2 = new DoubleLinkedList();
+        ArrayList<String> list = new ArrayList<>();
+        list.add("First Name");
+        list.add("Second Name");
+        Album a1 = new Album(1,list,"Dreamland",1);
+        Album a2 = new Album(1,list,"We",3);
+        Album a3 = new Album(1,list,"Sleepwalk",6);
+        Album a4 = new Album(1,list,"Manic",7);
+        //when the number of node is odd
+        dl.append(a1);
+        dl.append(a2);
+        dl.append(a3);
+        assertEquals(a2,dl.shuffle());
+    }
 
+    @Test
+    void partition() {
+        DoubleLinkedList dl = new DoubleLinkedList();
+        DoubleLinkedList dl2 = new DoubleLinkedList();
+        ArrayList<String> list = new ArrayList<>();
+        list.add("First Name");
+        list.add("Second Name");
+        Album a1 = new Album(1,list,"Dreamland",1);
+        Album a2 = new Album(1,list,"We",3);
+        Album a3 = new Album(1,list,"Sleepwalk",6);
+        Album a4 = new Album(1,list,"Manic",7);
+        dl.append(a1);
+        dl.append(a2);
+        dl.append(a3);
+        dl.append(a4);
+        dl2.append(a2);
+        dl2.append(a3);
+        dl2.append(a4);
+        Node<Album> n1 = new Node<Album>(a2);
+        assertEquals(dl2.toString(),dl.partition(n1).toString());
+    }
 }
