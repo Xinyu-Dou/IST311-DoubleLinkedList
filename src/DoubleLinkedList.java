@@ -23,6 +23,7 @@ public class DoubleLinkedList<T> {
         this.tail = node;
         this.tail.next = null;
         numNode += 1;
+        //return the appended node
         return node;
     }
 
@@ -42,15 +43,17 @@ public class DoubleLinkedList<T> {
                 if (position == 0 && numNode == 0) {
                     this.head = node;
                     this.tail = node;
+                    numNode++;
                 }
-                // add to the head of the list
-                else if (position == 0) {
-                    this.head.next = this.head;
-                    this.head.next.prev = this.head;
+                // add node to the head of the list
+                else if (position == 0 && numNode != 0) {
+                    this.head.prev = node;
+                    node.next = this.head;
                     this.head = node;
+                    numNode++;
                 }
                 // add to the middle of the list
-                else if (position < numNode) {
+                else if (position < numNode && numNode != 0) {
                     int count = 1;
                     Node<T> pre_node = this.head;
                     Node<T> after_node = this.head.next;
@@ -62,12 +65,13 @@ public class DoubleLinkedList<T> {
                     pre_node.next.prev = pre_node;
                     pre_node.next.next = after_node;
                     pre_node.next.next.prev = node;
+                    numNode++;
                 }
-                numNode++;
             }
         } catch (IllegalArgumentException e) {
             System.out.println("Location is out of the bounds of the list");
         }
+        //return the inserted node
         return node;
     }
 
@@ -75,6 +79,7 @@ public class DoubleLinkedList<T> {
         return numNode;
     }
 
+    //delete the item at that location (delete 0 deletes the head)
     public Node<T> delete(int position) {
         Node<T> deleted = new Node<T>(null);
         try {
@@ -89,6 +94,7 @@ public class DoubleLinkedList<T> {
             }
             //delete head
             else if (numNode > 1 && position == 0) {
+                deleted = this.head;
                 this.head = this.head.next;
                 this.head.prev = null;
             }
@@ -116,9 +122,11 @@ public class DoubleLinkedList<T> {
             System.out.println("Location is out of the bounds of the list");
         }
         numNode--;
+        //return the deleted node
         return deleted;
     }
 
+    //return the first index of the  item
     public int getIndex(Album data){
         Node<T> pointer = this.head;
         int count = 0;
@@ -133,10 +141,13 @@ public class DoubleLinkedList<T> {
                 count++;
             }
         }
+        //return -1 if it isn't in the list
         return -1;
     }
 
+    //shuffle the doublelinked list
     public Node<T> shuffle(){
+        //before shuffle the list, divide the original list into half by odd and even index
         DoubleLinkedList oddList = new DoubleLinkedList();
         DoubleLinkedList evenList = new DoubleLinkedList();
         Node<T> pointer = new Node<T>(null);
@@ -165,7 +176,24 @@ public class DoubleLinkedList<T> {
         if(pointer1 != null){
             result.append(pointer1.data);
         }
+        //Return the head of a shuffled list
         return result.head;
+    }
+
+    public DoubleLinkedList<Album> partition(Node<T> data){
+        DoubleLinkedList<Album> newList = new DoubleLinkedList<Album>();
+        Node<T> pointer = new Node<T>(null);
+        pointer = this.head;
+        while(pointer != null){
+            if(pointer.data.compareTo(data.data) == 1){
+                newList.append(pointer.data);
+            }
+            else{
+                continue;
+            }
+            pointer = pointer.next;
+        }
+        return newList;
     }
 
     @Override
