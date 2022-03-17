@@ -136,4 +136,38 @@ public class DoubleLinkedList<T> {
         return -1;
     }
 
+    public Node<T> shuffle(){
+        DoubleLinkedList oddList = new DoubleLinkedList();
+        DoubleLinkedList evenList = new DoubleLinkedList();
+        Node<T> pointer = new Node<T>(null);
+        pointer = this.head;
+        int count = 0;
+        while(pointer != null){
+            if(count%2 == 0){
+                evenList.append(pointer.data);
+            }
+            else{
+                oddList.append(pointer.data);
+            }
+            pointer = pointer.next;
+        }
+        Node<T> pointer1 = new Node<T>(null);
+        Node<T> pointer2 = new Node<T>(null);
+        pointer1 = oddList.head;
+        pointer2 = evenList.head;
+        DoubleLinkedList result = new DoubleLinkedList();
+        while(pointer2 != null){
+            result.append(pointer1.data);
+            result.append(pointer2.data);
+            pointer1 = pointer1.next;
+            pointer2 = pointer2.next;
+        }
+        if(pointer1 != null){
+            result.append(pointer1.data);
+        }
+        return result.head;
+    }
+
+
+
 }
