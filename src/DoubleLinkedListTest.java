@@ -78,15 +78,19 @@ class DoubleLinkedListTest {
     void getIndex() {
         DoubleLinkedList dl = new DoubleLinkedList();
         ArrayList<String> list = new ArrayList<>();
-        ArrayList<String> list2 = new ArrayList<>();
         list.add("First Name");
         list.add("Second Name");
-        list2.add("First Name");
-        Album a1 = new Album(1,list,"Chen",1);
-        Album a2 = new Album(1,list,"Dou",1);
+        Album a1 = new Album(1,list,"Dreamland",1);
+        Album a2 = new Album(1,list,"We",3);
+        Album a3 = new Album(1,list,"Sleepwalk",6);
+        Album a4 = new Album(1,list,"Manic",7);
         dl.append(a1);
-
-        System.out.println(dl.getIndex(a2));
+        dl.append(a2);
+        dl.append(a3);
+        assertEquals(0,dl.getIndex(a1));
+        //when the node is not in the list
+        assertEquals(-1,dl.getIndex(a4));
     }
+
 
 }
