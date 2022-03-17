@@ -168,6 +168,22 @@ public class DoubleLinkedList<T> {
         return result.head;
     }
 
+    @Override
+    public String toString(){
+        Node<T> toPrint = this.head;
+
+        StringBuilder stringBuilder = new StringBuilder();
+
+        while(toPrint != null){
+            stringBuilder.append(toPrint.data);
+            stringBuilder.append("->");
+            toPrint = toPrint.next;
+        }
+
+        stringBuilder.append("NULL");
+        return stringBuilder.toString();
+    }
+
 
 
 }

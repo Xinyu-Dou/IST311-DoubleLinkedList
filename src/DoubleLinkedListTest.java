@@ -10,10 +10,18 @@ class DoubleLinkedListTest {
     void append() {
         DoubleLinkedList dl = new DoubleLinkedList();
         ArrayList<String> list = new ArrayList<>();
+        ArrayList<String> list2 = new ArrayList<>();
+        list2.add("He");
         list.add("First Name");
         list.add("Second Name");
+        list2.add("He");
         Album a1 = new Album(1,list,"Chen",1);
+        Album a2 = new Album(1,list,"We",1);
+        //append when the list is empty
         dl.append(a1);
+        System.out.println(dl.toString());
+        //append when the list is not empty
+        dl.append(a2);
     }
 
 
