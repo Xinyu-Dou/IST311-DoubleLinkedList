@@ -119,4 +119,21 @@ public class DoubleLinkedList<T> {
         return deleted;
     }
 
+    public int getIndex(Album data){
+        Node<T> pointer = this.head;
+        int count = 0;
+        while(pointer != null){
+            if(pointer.data.getID() == data.getID() &&
+                    pointer.data.getTitle().equals(data.getTitle()) &&
+                    pointer.data.getNumSong() == data.getNumSong() &&
+                    pointer.data.getName().equals(data.getName())){
+                return count;
+            }else{
+                pointer = pointer.next;
+                count++;
+            }
+        }
+        return -1;
+    }
+
 }

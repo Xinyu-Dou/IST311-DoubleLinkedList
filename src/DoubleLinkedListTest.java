@@ -41,4 +41,19 @@ class DoubleLinkedListTest {
         System.out.println(dl.toString());
     }
 
+    @Test
+    void getIndex() {
+        DoubleLinkedList dl = new DoubleLinkedList();
+        ArrayList<String> list = new ArrayList<>();
+        ArrayList<String> list2 = new ArrayList<>();
+        list.add("First Name");
+        list.add("Second Name");
+        list2.add("First Name");
+        Album a1 = new Album(1,list,"Chen",1);
+        Album a2 = new Album(1,list,"Dou",1);
+        dl.append(a1);
+
+        System.out.println(dl.getIndex(a2));
+    }
+
 }
