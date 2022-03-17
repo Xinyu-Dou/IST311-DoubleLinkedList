@@ -71,4 +71,52 @@ public class DoubleLinkedList<T> {
         return node;
     }
 
+    public int getNumNode(){
+        return numNode;
+    }
+
+    public Node<T> delete(int position) {
+        Node<T> deleted = new Node<T>(null);
+        try {
+            if (position >= numNode || position < 0) {
+                throw new IllegalArgumentException();
+            }
+            //delete last node
+            else if (numNode == 1 && position == 0) {
+                deleted = this.head;
+                this.head = null;
+                this.tail = null;
+            }
+            //delete head
+            else if (numNode > 1 && position == 0) {
+                this.head = this.head.next;
+                this.head.prev = null;
+            }
+            //delete tail
+            else if (numNode > 1 && position == numNode - 1) {
+                deleted = this.tail;
+                this.tail = this.tail.prev;
+                this.tail.next = null;
+            }
+            //delete middle
+            else {
+                int count = 0;
+                Node<T> pointer = this.head;
+                while (count < position - 1) {
+                    pointer = this.head;
+                    pointer = pointer.next;
+                    count++;
+                }
+                deleted = pointer.next;
+                pointer.next = pointer.next.next;
+                pointer.next.prev = pointer;
+            }
+
+        } catch (IllegalArgumentException e) {
+            System.out.println("Location is out of the bounds of the list");
+        }
+        numNode--;
+        return deleted;
+    }
+
 }

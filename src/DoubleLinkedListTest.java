@@ -28,4 +28,17 @@ class DoubleLinkedListTest {
         System.out.println(dl.toString());
     }
 
+    @Test
+    void delete() {
+        DoubleLinkedList dl = new DoubleLinkedList();
+        ArrayList<String> list = new ArrayList<>();
+        list.add("First Name");
+        list.add("Second Name");
+        Album a1 = new Album(1,list,"Chen",1);
+        dl.insert(0,a1);
+        System.out.println(dl.getNumNode());
+        dl.delete(2);
+        System.out.println(dl.toString());
+    }
+
 }
