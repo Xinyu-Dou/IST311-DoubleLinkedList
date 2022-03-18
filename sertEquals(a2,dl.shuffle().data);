@@ -1,0 +1,71 @@
+[33mcommit dce0ee777fa9ab00ea822a156c8763d5d99a8430[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: BuildTools <unconfigured@null.spigotmc.org>
+Date:   Thu Mar 17 20:28:13 2022 -0400
+
+    Test and modify shuffle method
+
+[33mcommit 6ceac4a57a4810038ab3b17efa78d360548ca92d[m
+Author: BuildTools <unconfigured@null.spigotmc.org>
+Date:   Thu Mar 17 19:46:32 2022 -0400
+
+    Test and modify partition method
+
+[33mcommit 932a27196b4f55dbf602bb34fd57c318c1960846[m
+Author: BuildTools <unconfigured@null.spigotmc.org>
+Date:   Thu Mar 17 19:27:47 2022 -0400
+
+    Test getIndex method
+
+[33mcommit f853f0cd5cb8e8821a5859a48c6cb54b11e10019[m
+Author: BuildTools <unconfigured@null.spigotmc.org>
+Date:   Thu Mar 17 19:07:25 2022 -0400
+
+    Test delete method
+
+[33mcommit 6d0986fd145ed037e2ddcbeaa996661745e03490[m
+Author: BuildTools <unconfigured@null.spigotmc.org>
+Date:   Thu Mar 17 11:47:11 2022 -0400
+
+    Create toString method
+
+[33mcommit de23a86780a94ba7b31232d749abbf5d1ea5cf96[m
+Author: BuildTools <unconfigured@null.spigotmc.org>
+Date:   Thu Mar 17 11:27:54 2022 -0400
+
+    Create shuffle method
+
+[33mcommit 61519440519303f5898efa3f40448bf45a47b152[m
+Author: BuildTools <unconfigured@null.spigotmc.org>
+Date:   Wed Mar 16 23:38:05 2022 -0400
+
+    Create getIndex method
+
+[33mcommit 0effd9addb97afde30b858919c9c6ca3d5bbe2e7[m
+Author: BuildTools <unconfigured@null.spigotmc.org>
+Date:   Wed Mar 16 22:49:32 2022 -0400
+
+    Create delete method
+
+[33mcommit 3567ade1e5bf8885d3614b476663c46a2da54d47[m
+Author: BuildTools <unconfigured@null.spigotmc.org>
+Date:   Wed Mar 16 21:49:00 2022 -0400
+
+    Create insert method
+
+[33mcommit 2b17b74054c7a9012a4bfe8dfa31b593bb7980d7[m
+Author: BuildTools <unconfigured@null.spigotmc.org>
+Date:   Wed Mar 16 18:49:28 2022 -0400
+
+    Create append method
+
+[33mcommit b9a8743dd0f520f493fad8bcc5dad142eda672d4[m
+Author: BuildTools <unconfigured@null.spigotmc.org>
+Date:   Wed Mar 16 18:09:46 2022 -0400
+
+    create classes.
+
+[33mcommit 7676e0dca401c05a906989d0544b1fe569e1e778[m
+Author: BuildTools <unconfigured@null.spigotmc.org>
+Date:   Wed Mar 16 18:06:43 2022 -0400
+
+    first commit

@@ -74,6 +74,8 @@ class DoubleLinkedListTest {
         //delete middle
         dl.append(a4);
         assertEquals(a3,dl.delete(1).data);
+        //when the insert position is out of bounce
+        dl.delete(5);
     }
 
     @Test
