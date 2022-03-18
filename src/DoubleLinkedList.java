@@ -160,6 +160,7 @@ public class DoubleLinkedList<T> {
             else{
                 oddList.append(pointer.data);
             }
+            count++;
             pointer = pointer.next;
         }
         Node<T> pointer1 = new Node<T>(null);
@@ -167,14 +168,14 @@ public class DoubleLinkedList<T> {
         pointer1 = oddList.head;
         pointer2 = evenList.head;
         DoubleLinkedList result = new DoubleLinkedList();
-        while(pointer2 != null){
+        while(pointer1 != null){
             result.append(pointer1.data);
             result.append(pointer2.data);
             pointer1 = pointer1.next;
             pointer2 = pointer2.next;
         }
-        if(pointer1 != null){
-            result.append(pointer1.data);
+        if(pointer2 != null){
+            result.append(pointer2.data);
         }
         //Return the head of a shuffled list
         return result.head;

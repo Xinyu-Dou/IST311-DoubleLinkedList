@@ -46,6 +46,8 @@ class DoubleLinkedListTest {
         //insert at middle
         assertEquals(a4,dl.insert(1,a4).data);
         System.out.println(dl.toString());
+        //when the insert position is out of bounce
+        dl.insert(5,a1);
     }
 
     @Test
@@ -107,7 +109,13 @@ class DoubleLinkedListTest {
         dl.append(a1);
         dl.append(a2);
         dl.append(a3);
-        assertEquals(a2,dl.shuffle());
+        assertEquals(a2,dl.shuffle().data);
+        //when the number of node is even
+        dl.append(a1);
+        dl.append(a2);
+        dl.append(a3);
+        dl.append(a4);
+        assertEquals(a2,dl.shuffle().data);
     }
 
     @Test
